@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav id="menu" hidden></nav>
+<div class="wrap">
+    <textarea id="reader">Здесь должен быть ваш текст</textarea>
+    <div class="wrap-btn">
+        <button onclick="takeDataSetOnly(); takeTextOnly()" class="saveData saveData btn" title="Долгое ожидание сохранения!">Сохранить все (и текст)</button>
+        <button id="readMode" onclick="readMode()" class="readMode btn">Режим чтения</button>
+        <button onclick="takeDataSetOnly()" class="saveData btn">Сохранить параметры</button>
+        <input type="text" id="hideInp" class="hideInp">
+    </div>
+</div>
+
+<div id="control" class="control">
+    <button class="btn btn_f" onclick="scrollTextStart(); scrollText();">Scroll</button>
+    <button class="btn btn_f" onclick="scrollTextEnd()">Stop</button>
+    <button class="btn btn_f btn_safe" onclick="takeDataSet()">Safe</button>
+    <button class="btn btn_f" onclick="getDataSet()">Get</button>
+    <div class="control__wr">
+        <div class="control__label">Цвет текста:</div>
+        <div class="control__input">
+            <input type="color" id="colText" class="control__inp inp-color" value="#000000">
+        </div>
+    </div>
+    <div class="control__wr">
+        <div class="control__label">Цвет фона:</div>
+        <div class="control__input">
+            <input type="color" id="colBody" class="control__inp inp-color" value="#ffffff">
+        </div>
+    </div>
+    <div class="control__wr">
+        <div class="control__label">Размер текста:</div>
+        <div class="control__input">
+            <input type="number" step="1" min="5" class="control__inp" max="50" id="font-size-inp" class="input inp-text">
+        </div>
+    </div>
+    <input type="text" id="backImg" value="" placeholder="Insert image" hidden>
+    <div class="control__toggle" id="set-toggle" title="" onclick="toggleSetting()"></div>
+</div>
+
+<div class="new-reader" hidden>
+    <form class="new-reader__form" id="book-form">
+        <input type="text" id="book-name" class="new-reader btn">
+        <button>Создать читалку</button>
+    </form>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/script-main.js"></script>
+</body>
+</html>

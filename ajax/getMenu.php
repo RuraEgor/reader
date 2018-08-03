@@ -1,0 +1,1 @@
+<?phprequire_once '../config.php';//mysql_query("SET NAMES 'utf8'");//mysql_query("SET CHARACTER SET 'utf8'");$per = mysql_query("SELECT `id`,`name` FROM `$nameTable` ORDER BY `id` ASC limit 20");while ($row = mysql_fetch_assoc($per)){    $mes['id'][] = $row['id'];    $mes['name'][] = $row['name'];}print json_encode($mes);
